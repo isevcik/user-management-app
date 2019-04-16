@@ -1,5 +1,6 @@
 {
   "extends": "tslint:recommended",
+  "indent": [true, "spaces", 4],
   "rulesDirectory": [
     "codelyzer"
   ],

@@ -1,0 +1,14 @@
+<div *ngIf="showNewButton" class="user-add-button">
+    <a [routerLink]="['/user-add']" color="primary" mat-mini-fab>
+        <mat-icon>add</mat-icon>
+    </a>
+</div>
+
+<h2>{{ title }}</h2>
+
+<button *ngIf="showGoBackButton" (click)="onGoBackButtonClick()" mat-button>
+    <mat-icon>arrow_back</mat-icon>
+    Go Back
+</button>
+
+

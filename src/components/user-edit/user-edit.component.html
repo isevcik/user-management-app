@@ -1,0 +1,36 @@
+<app-page-header [title]="!userId ? 'Add New User' : userLabel" showGoBackButton="true"></app-page-header>
+
+<form class="user-edit" [formGroup]="userForm">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="No." formControlName="number">
+        <mat-error *ngIf="userForm.get('number').errors?.required">
+            Number is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="First Name" formControlName="firstName">
+        <mat-error *ngIf="userForm.get('firstName').errors?.required">
+            First name is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Last Name" formControlName="lastName">
+        <mat-error *ngIf="userForm.get('lastName').errors?.required">
+            Last name is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email Address" formControlName="email">
+        <mat-error *ngIf="userForm.get('email').errors?.required">
+            Email is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="userForm.get('email').errors?.email">
+            Email is <strong>not valid</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Age" formControlName="age">
+    </mat-form-field>
+</form>
+
+<button mat-raised-button color="primary" [disabled]="!userForm.valid" (click)="onSubmitClick()">Submit</button>
